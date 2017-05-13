@@ -1,0 +1,19 @@
+<ion-view view-title="BitsoBOT" hide-nav-bar="true" class="splash-page">
+  <ion-content scroll="false">
+    <div class="padding logo">
+      <h2>BitsoBOT</h2>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Nombre de usuario" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Contraseña" ng-model="user.password">
+      </label>
+    </div>
+    <br>
+    <button class="button button-block button-positive" ng-click="validateLogin(user)">Submit</button>
+  </ion-content>
+
+</ion-view>

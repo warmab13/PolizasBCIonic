@@ -1,0 +1,24 @@
+.small-text{
+	font-size: 12px;
+}
+
+.bold-text{
+	font-weight: 600;
+}
+.header .col {
+  background-color:lightgrey;
+
+}
+
+.col {
+  border-bottom-style: none;
+  border-right-style: none;
+  padding:12px;
+}
+
+.col:last-child {
+}
+
+.row:last-child .col {
+}
+

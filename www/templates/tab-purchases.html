@@ -1,0 +1,78 @@
+<ion-view view-title="Purchases">
+  <ion-content>
+
+    <div class="card" >
+      <div class="item item-divider" style="background-color: #4CAF50; color: white">
+        Compra bitcoins <button class="button button-small ion-plus" style="float: right;" ng-click="openModal()"></button>
+      </div>
+      <ion-scroll zooming="true" direction="yx" style="height: 300px;">
+        <div class="item item-text-wrap">
+
+          <div class="row header">
+            <div class="col">Precio <br> <span class="small-text">PV Min</span></div>
+            <div class="col">Monto <br> <span class="small-text">Suma</span></div>
+            <div class="col">Valor <br> <span class="small-text">Suma</span></div>
+          </div>
+          <div class="row" ng-repeat="purchase in purchases">
+            <div class="col">{{ purchase.price | currency }} <br><span class="small-text"> {{ purchase.minPrice | currency }}</span></div>
+            <div class="col"><span class="small-text">${{ purchase.amount }}</span></div>
+            <div class="col">{{ purchase.value | currency }}</div>
+           </div>
+
+        </div>
+     </ion-scroll>
+      <div class="item item-divider">
+      </div>
+    </div>
+
+    <div class="card" >
+      <div class="item item-divider" style="background-color: #4CAF50; color: white">
+        Compras recientes
+      </div>
+      <ion-scroll zooming="true" direction="y" style="height: 300px;">
+        <div class="item item-text-wrap">
+
+          <div class="row header">
+            <div class="col">Fecha </div>
+            <div class="col">Precio</div>
+            <div class="col">Monto </div>
+            <div class="col">Valor </div>
+          </div>
+          <div class="row" ng-repeat="recentPurchase in recentPurchases">
+            <div class="col"><span class="small-text">{{ recentPurchase.date }} </span></div>
+            <div class="col"><span class="small-text">{{ recentPurchase.price }}</span></div>
+            <div class="col"><span class="small-text">{{ recentPurchase.amount }}</span></div>
+            <div class="col"><span class="small-text">{{ recentPurchase.value }}</span></div>
+          </div>
+        </div>
+       </ion-scroll>
+      <div class="item item-divider">
+      </div>
+    </div>
+
+
+  </ion-content>
+
+  <script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view >
+    <ion-header-bar style="background-color: #4CAF50;">
+      <h1 class="title" style="color: white">Poner orden de compra</h1> <button class="button button-clear" ng-click="modal.hide()" style="color: white">Cancel</button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Monto</span>
+          <input type="text" placeholder="Monto...">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Precio</span>
+          <input type="text" placeholder="Precio....">
+        </label>
+
+        <button class="button button-full button-positive" ng-click="modal.hide()" style="background-color: #4CAF50">Ok</button>
+
+      </div>
+    </ion-content>
+  </ion-modal-view>
+  </script>
+</ion-view>
